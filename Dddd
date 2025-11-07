@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير شواهد - خطة درس</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        @media print {
+            .no-print { display: none; }
+            body { background: white; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .shadow-custom {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .evidence-placeholder {
+            background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-full">
+    <div class="max-w-4xl mx-auto p-6">
+        <!-- Header -->
+        <header class="gradient-bg text-white p-8 rounded-t-2xl shadow-custom">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold mb-2">تقرير شواهد - خطة درس</h1>
+                <div class="flex justify-center items-center gap-4 text-lg">
+                    <span>📚</span>
+                    <span>وزارة التعليم - المملكة العربية السعودية</span>
+                    <span>📚</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="bg-white rounded-b-2xl shadow-custom p-8">
+            <!-- General Information Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2">
+                    📋 المعلومات العامة
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">الإدارة التعليمية:</label>
+                            <p class="text-gray-900">الإدارة العامة للتعليم بمنطقة حائل</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">المدرسة:</label>
+                            <p class="text-gray-900">متوسطة المجصة</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">اسم المعلم:</label>
+                            <p class="text-gray-900">عبدالله سعد الرشيدي</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">مدير المدرسة:</label>
+                            <p class="text-gray-900">فيصل راشد الرشيدي</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-1">المادة:</label>
+                            <input type="text" id="subject" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="أدخل اسم المادة">
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <label for="grade" class="block text-sm font-semibold text-gray-700 mb-1">الصف:</label>
+                            <select id="grade" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                                <option value="">اختر الصف</option>
+                                <option value="الأول المتوسط">الأول المتوسط</option>
+                                <option value="الثاني المتوسط">الثاني المتوسط</option>
+                                <option value="الثالث المتوسط">الثالث المتوسط</option>
+                            </select>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <label for="lesson-date" class="block text-sm font-semibold text-gray-700 mb-1">تاريخ الدرس:</label>
+                            <input type="date" id="lesson-date" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                            <label for="lesson-title" class="block text-sm font-semibold text-gray-700 mb-1">عنوان الدرس:</label>
+                            <input type="text" id="lesson-title" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent" placeholder="أدخل عنوان الدرس">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lesson Objectives Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2">
+                    🎯 أهداف الدرس
+                </h2>
+                
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div id="objectives-container" class="space-y-3">
+                        <div class="objective-item flex items-center gap-3">
+                            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                            <input type="text" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="أدخل الهدف الأول">
+                            <button onclick="removeObjective(this)" class="text-red-500 hover:text-red-700 font-bold text-lg">×</button>
+                        </div>
+                    </div>
+                    <button onclick="addObjective()" class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition-colors">
+                        ➕ إضافة هدف جديد
+                    </button>
+                </div>
+            </section>
+
+            <!-- Teaching Strategies Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">
+                    🧠 استراتيجيات التدريس
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-3">الاستراتيجيات المستخدمة:</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-purple-500 focus:ring-purple-500">
+                                <span>العصف الذهني</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-purple-500 focus:ring-purple-500">
+                                <span>التعلم التعاوني</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-purple-500 focus:ring-purple-500">
+                                <span>حل المشكلات</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-purple-500 focus:ring-purple-500">
+                                <span>التعلم النشط</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-purple-500 focus:ring-purple-500">
+                                <span>المناقشة والحوار</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <label for="other-strategies" class="block font-semibold text-gray-800 mb-2">استراتيجيات أخرى:</label>
+                        <textarea id="other-strategies" rows="6" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="اذكر أي استراتيجيات أخرى مستخدمة..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Evidence Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">
+                    📸 شواهد الدرس
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-4">📷 الصور</h3>
+                        <div class="border-2 border-dashed border-orange-300 rounded-lg p-4 text-center">
+                            <input type="file" id="images-upload" accept="image/*" multiple class="hidden" onchange="handleFileUpload(this, 'images')">
+                            <label for="images-upload" class="cursor-pointer block">
+                                <div class="text-orange-500 text-4xl mb-2">📸</div>
+                                <p class="text-gray-600 mb-2">اضغط لرفع الصور</p>
+                                <p class="text-sm text-gray-500">PNG, JPG, GIF حتى 10MB</p>
+                            </label>
+                        </div>
+                        <div id="images-preview" class="mt-4 grid grid-cols-2 gap-2"></div>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-4">📹 الفيديوهات</h3>
+                        <div class="border-2 border-dashed border-orange-300 rounded-lg p-4 text-center">
+                            <input type="file" id="videos-upload" accept="video/*" multiple class="hidden" onchange="handleFileUpload(this, 'videos')">
+                            <label for="videos-upload" class="cursor-pointer block">
+                                <div class="text-orange-500 text-4xl mb-2">🎬</div>
+                                <p class="text-gray-600 mb-2">اضغط لرفع الفيديوهات</p>
+                                <p class="text-sm text-gray-500">MP4, AVI, MOV حتى 50MB</p>
+                            </label>
+                        </div>
+                        <div id="videos-preview" class="mt-4 space-y-2"></div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-orange-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-4">📝 أعمال الطلاب</h3>
+                    <div class="border-2 border-dashed border-orange-300 rounded-lg p-4 text-center">
+                        <input type="file" id="documents-upload" accept=".pdf,.doc,.docx,.txt,.jpg,.png" multiple class="hidden" onchange="handleFileUpload(this, 'documents')">
+                        <label for="documents-upload" class="cursor-pointer block">
+                            <div class="text-orange-500 text-4xl mb-2">📄</div>
+                            <p class="text-gray-600 mb-2">اضغط لرفع أعمال الطلاب</p>
+                            <p class="text-sm text-gray-500">PDF, DOC, صور حتى 20MB</p>
+                        </label>
+                    </div>
+                    <div id="documents-preview" class="mt-4 space-y-2"></div>
+                </div>
+                
+                <!-- Download All Button -->
+                <div class="mt-6 text-center">
+                    <button onclick="downloadAllFiles()" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md">
+                        📥 تحميل جميع الملفات
+                    </button>
+                </div>
+            </section>
+
+            <!-- Assessment Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2">
+                    📊 التقويم والتقييم
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-gray-800 mb-4">أساليب التقويم:</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-blue-500 focus:ring-blue-500">
+                                <span>التقويم التشخيصي</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-blue-500 focus:ring-blue-500">
+                                <span>التقويم التكويني</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-blue-500 focus:ring-blue-500">
+                                <span>التقويم الختامي</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-blue-500 focus:ring-blue-500">
+                                <span>التقويم الذاتي</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-blue-500 focus:ring-blue-500">
+                                <span>تقويم الأقران</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <label for="assessment-notes" class="block font-semibold text-gray-800 mb-2">ملاحظات التقويم:</label>
+                        <textarea id="assessment-notes" rows="6" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="اكتب ملاحظاتك حول أداء الطلاب والتقويم..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reflection Section -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-red-500 pb-2">
+                    🤔 التأمل والتطوير
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <label for="lesson-reflection" class="block font-semibold text-gray-800 mb-2">تأمل حول سير الدرس:</label>
+                        <textarea id="lesson-reflection" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="ما الذي سار بشكل جيد؟ ما التحديات التي واجهتها؟"></textarea>
+                    </div>
+                    
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <label for="improvements" class="block font-semibold text-gray-800 mb-2">مقترحات للتحسين:</label>
+                        <textarea id="improvements" rows="4" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="كيف يمكن تحسين الدرس في المرات القادمة؟"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 justify-center no-print">
+                <button onclick="saveReport()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md">
+                    💾 حفظ التقرير
+                </button>
+                <button onclick="downloadPage()" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md">
+                    📄 تحميل الصفحة
+                </button>
+                <button onclick="printReport()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md">
+                    🖨️ طباعة التقرير
+                </button>
+                <button onclick="clearForm()" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md">
+                    🗑️ مسح البيانات
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let objectiveCount = 1;
+        let uploadedFiles = {
+            images: [],
+            videos: [],
+            documents: []
+        };
+
+        function addObjective() {
+            objectiveCount++;
+            const container = document.getElementById('objectives-container');
+            const newObjective = document.createElement('div');
+            newObjective.className = 'objective-item flex items-center gap-3 fade-in';
+            newObjective.innerHTML = `
+                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">${objectiveCount}</span>
+                <input type="text" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="أدخل الهدف رقم ${objectiveCount}">
+                <button onclick="removeObjective(this)" class="text-red-500 hover:text-red-700 font-bold text-lg">×</button>
+            `;
+            container.appendChild(newObjective);
+        }
+
+        function handleFileUpload(input, type) {
+            const files = Array.from(input.files);
+            const maxSizes = {
+                images: 10 * 1024 * 1024, // 10MB
+                videos: 50 * 1024 * 1024, // 50MB
+                documents: 20 * 1024 * 1024 // 20MB
+            };
+
+            files.forEach(file => {
+                if (file.size > maxSizes[type]) {
+                    showMessage(`الملف ${file.name} كبير جداً. الحد الأقصى ${maxSizes[type] / (1024 * 1024)}MB`, 'error');
+                    return;
+                }
+
+                const fileData = {
+                    name: file.name,
+                    size: file.size,
+                    type: file.type,
+                    file: file,
+                    id: Date.now() + Math.random()
+                };
+
+                uploadedFiles[type].push(fileData);
+                displayFile(fileData, type);
+            });
+
+            // Clear input for re-upload
+            input.value = '';
+        }
+
+        function displayFile(fileData, type) {
+            const previewContainer = document.getElementById(`${type}-preview`);
+            const fileElement = document.createElement('div');
+            fileElement.className = 'bg-white p-3 rounded-lg border shadow-sm fade-in';
+            fileElement.id = `file-${fileData.id}`;
+
+            let preview = '';
+            if (type === 'images' && fileData.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = fileElement.querySelector('.file-preview');
+                    img.innerHTML = `<img src="${e.target.result}" alt="${fileData.name}" class="w-full h-20 object-cover rounded">`;
+                };
+                reader.readAsDataURL(fileData.file);
+                preview = '<div class="file-preview mb-2"></div>';
+            } else if (type === 'videos' && fileData.type.startsWith('video/')) {
+                preview = '<div class="text-blue-500 text-2xl mb-2">🎬</div>';
+            } else {
+                const icon = getFileIcon(fileData.name);
+                preview = `<div class="text-2xl mb-2">${icon}</div>`;
+            }
+
+            fileElement.innerHTML = `
+                ${preview}
+                <div class="flex items-center justify-between">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate">${fileData.name}</p>
+                        <p class="text-xs text-gray-500">${formatFileSize(fileData.size)}</p>
+                    </div>
+                    <div class="flex gap-2 mr-2">
+                        <button onclick="downloadFile('${fileData.id}', '${type}')" class="text-blue-500 hover:text-blue-700 text-sm">📥</button>
+                        <button onclick="removeFile('${fileData.id}', '${type}')" class="text-red-500 hover:text-red-700 text-sm">🗑️</button>
+                    </div>
+                </div>
+            `;
+
+            previewContainer.appendChild(fileElement);
+        }
+
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const icons = {
+                pdf: '📄',
+                doc: '📝',
+                docx: '📝',
+                txt: '📄',
+                jpg: '🖼️',
+                jpeg: '🖼️',
+                png: '🖼️',
+                gif: '🖼️'
+            };
+            return icons[ext] || '📎';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function removeFile(fileId, type) {
+            uploadedFiles[type] = uploadedFiles[type].filter(file => file.id != fileId);
+            document.getElementById(`file-${fileId}`).remove();
+            showMessage('تم حذف الملف بنجاح', 'info');
+        }
+
+        function downloadFile(fileId, type) {
+            const file = uploadedFiles[type].find(f => f.id == fileId);
+            if (file) {
+                const url = URL.createObjectURL(file.file);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = file.name;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showMessage(`تم تحميل ${file.name} بنجاح`, 'success');
+            }
+        }
+
+        function downloadAllFiles() {
+            const allFiles = [...uploadedFiles.images, ...uploadedFiles.videos, ...uploadedFiles.documents];
+            
+            if (allFiles.length === 0) {
+                showMessage('لا توجد ملفات للتحميل', 'info');
+                return;
+            }
+
+            // Create a zip-like download by downloading each file
+            let downloadCount = 0;
+            allFiles.forEach((file, index) => {
+                setTimeout(() => {
+                    const url = URL.createObjectURL(file.file);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${index + 1}-${file.name}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    downloadCount++;
+                    if (downloadCount === allFiles.length) {
+                        showMessage(`تم تحميل ${allFiles.length} ملف بنجاح`, 'success');
+                    }
+                }, index * 500); // Stagger downloads
+            });
+        }
+
+        function removeObjective(button) {
+            if (document.querySelectorAll('.objective-item').length > 1) {
+                button.parentElement.remove();
+                updateObjectiveNumbers();
+            }
+        }
+
+        function updateObjectiveNumbers() {
+            const objectives = document.querySelectorAll('.objective-item');
+            objectives.forEach((obj, index) => {
+                const numberSpan = obj.querySelector('span');
+                const input = obj.querySelector('input');
+                numberSpan.textContent = index + 1;
+                input.placeholder = `أدخل الهدف رقم ${index + 1}`;
+            });
+            objectiveCount = objectives.length;
+        }
+
+        function saveReport() {
+            // Collect all form data
+            const formData = {
+                subject: document.getElementById('subject').value,
+                grade: document.getElementById('grade').value,
+                lessonDate: document.getElementById('lesson-date').value,
+                lessonTitle: document.getElementById('lesson-title').value,
+                objectives: Array.from(document.querySelectorAll('.objective-item input')).map(input => input.value),
+                otherStrategies: document.getElementById('other-strategies').value,
+                assessmentNotes: document.getElementById('assessment-notes').value,
+                lessonReflection: document.getElementById('lesson-reflection').value,
+                improvements: document.getElementById('improvements').value,
+                strategies: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.nextElementSibling.textContent)
+            };
+
+            // Save to localStorage
+            localStorage.setItem('lessonPlanReport', JSON.stringify(formData));
+            
+            // Show success message
+            showMessage('تم حفظ التقرير بنجاح! ✅', 'success');
+        }
+
+        function downloadPage() {
+            // Get the current page content
+            const pageContent = document.documentElement.outerHTML;
+            
+            // Create a blob with the HTML content
+            const blob = new Blob([pageContent], { type: 'text/html;charset=utf-8' });
+            
+            // Create download link
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            
+            // Generate filename with current date
+            const now = new Date();
+            const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD format
+            const lessonTitle = document.getElementById('lesson-title').value || 'درس';
+            const subject = document.getElementById('subject').value || 'مادة';
+            
+            a.download = `تقرير_شواهد_${subject}_${lessonTitle}_${dateStr}.html`;
+            
+            // Trigger download
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showMessage('تم تحميل الصفحة بنجاح! 📄', 'success');
+        }
+
+        function printReport() {
+            window.print();
+        }
+
+        function clearForm() {
+            // Show confirmation
+            const confirmDiv = document.createElement('div');
+            confirmDiv.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            confirmDiv.innerHTML = `
+                <div class="bg-white p-6 rounded-lg shadow-xl max-w-md mx-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">تأكيد المسح</h3>
+                    <p class="text-gray-600 mb-6">هل أنت متأكد من رغبتك في مسح جميع البيانات؟ لا يمكن التراجع عن هذا الإجراء.</p>
+                    <div class="flex gap-3 justify-end">
+                        <button onclick="this.closest('.fixed').remove()" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-md transition-colors">إلغاء</button>
+                        <button onclick="confirmClear()" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition-colors">مسح البيانات</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(confirmDiv);
+        }
+
+        function confirmClear() {
+            // Clear all form fields
+            document.querySelectorAll('input[type="text"], input[type="date"], textarea, select').forEach(field => {
+                field.value = '';
+            });
+            
+            // Uncheck all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Reset objectives to just one
+            const container = document.getElementById('objectives-container');
+            container.innerHTML = `
+                <div class="objective-item flex items-center gap-3">
+                    <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                    <input type="text" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="أدخل الهدف الأول">
+                    <button onclick="removeObjective(this)" class="text-red-500 hover:text-red-700 font-bold text-lg">×</button>
+                </div>
+            `;
+            objectiveCount = 1;
+            
+            // Remove confirmation dialog
+            document.querySelector('.fixed').remove();
+            
+            // Clear localStorage
+            localStorage.removeItem('lessonPlanReport');
+            
+            showMessage('تم مسح جميع البيانات بنجاح! 🗑️', 'info');
+        }
+
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                info: 'bg-blue-500'
+            };
+            
+            messageDiv.className = `fixed top-4 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-50 fade-in`;
+            messageDiv.textContent = message;
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 3000);
+        }
+
+        // Load saved data on page load
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('lessonPlanReport');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                
+                // Fill basic fields
+                if (data.subject) document.getElementById('subject').value = data.subject;
+                if (data.grade) document.getElementById('grade').value = data.grade;
+                if (data.lessonDate) document.getElementById('lesson-date').value = data.lessonDate;
+                if (data.lessonTitle) document.getElementById('lesson-title').value = data.lessonTitle;
+                if (data.otherStrategies) document.getElementById('other-strategies').value = data.otherStrategies;
+                if (data.assessmentNotes) document.getElementById('assessment-notes').value = data.assessmentNotes;
+                if (data.lessonReflection) document.getElementById('lesson-reflection').value = data.lessonReflection;
+                if (data.improvements) document.getElementById('improvements').value = data.improvements;
+                
+                // Fill objectives
+                if (data.objectives && data.objectives.length > 0) {
+                    const container = document.getElementById('objectives-container');
+                    container.innerHTML = '';
+                    data.objectives.forEach((objective, index) => {
+                        const objectiveDiv = document.createElement('div');
+                        objectiveDiv.className = 'objective-item flex items-center gap-3';
+                        objectiveDiv.innerHTML = `
+                            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">${index + 1}</span>
+                            <input type="text" value="${objective}" class="flex-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="أدخل الهدف رقم ${index + 1}">
+                            <button onclick="removeObjective(this)" class="text-red-500 hover:text-red-700 font-bold text-lg">×</button>
+                        `;
+                        container.appendChild(objectiveDiv);
+                    });
+                    objectiveCount = data.objectives.length;
+                }
+                
+                // Check strategy checkboxes
+                if (data.strategies) {
+                    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                        const label = checkbox.nextElementSibling.textContent;
+                        if (data.strategies.includes(label)) {
+                            checkbox.checked = true;
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99afb11b16e397d8',t:'MTc2MjU0ODUxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
